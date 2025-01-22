@@ -1,4 +1,5 @@
 import { graphicHandler } from "./main";
+import { tasksHandler } from "./tasksHandler";
 import { todoFlow } from "./todos";
 
 export const domBuilder = (function () {
@@ -45,22 +46,41 @@ export const domBuilder = (function () {
 
   const taskListCreator = (i) => {
     const taskListPaper = document.querySelector(".task-list-paper");
+    const seperator = document.createElement("hr");
     const task = document.createElement("div");
     taskListPaper.appendChild(task);
     task.classList.add("task");
     const taskTodo = document.createElement("label");
-    taskTodo.setAttribute("for", `${ds}`);
+    taskTodo.setAttribute("for", `${tasksHandler.getTasks()[i].title}`);
+    const p = document.createElement("p");
+    p.innerHTML = tasksHandler.getTasks()[i].title;
     const checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
-    checkbox.setAttribute("id", `${sz}`);
+    checkbox.setAttribute("id", `${tasksHandler.getTasks()[i].title}`);
     checkbox.setAttribute("name", "state");
-    checkbox.setAttribute("value", `${sz}`);
-
-    task.appendChild(taskTodo);
+    checkbox.setAttribute("value", `${tasksHandler.getTasks()[i].title}`);
     task.appendChild(checkbox);
+    task.appendChild(taskTodo);
+    taskTodo.appendChild(p);
+    taskListPaper.appendChild(seperator);
+
+    taskTodo.addEventListener("click", () => {
+      console.log("haya dertha");
+      p.style.textDecoration = "line-through";
+    });
+    checkbox.addEventListener("click", () => {
+      if (checkbox.checked) {
+        p.style.textDecoration = "line-through";
+        p.style.color = "#f5f5f559";
+      }else{
+        p.style.textDecoration = "none"
+        p.style.color = "white";
+      }
+    });
   };
 
   return {
     navBarElementCreator,
+    taskListCreator,
   };
 })();

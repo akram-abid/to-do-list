@@ -14,7 +14,7 @@
           <p>Free Plan</p>
         </div>
       </div>
-      <hr>
+      <hr />
       <div class="time-categs">
         <div class="categ">
           <svg
@@ -115,7 +115,7 @@
           <p>Completed</p>
         </div>
       </div>
-      <hr>
+      <hr />
       <div class="projects">
         <div class="add">
           <div class="project-text">
@@ -170,18 +170,21 @@
             <p>Projects</p>
           </div>
           <button class="add-project">+</button>
-          <dialog >
+          <dialog>
             <div class="dialog-content">
-                <input class="add-input" type="text" placeholder="give it a name">
-                <div class="dialog-btns">
-                    <button class="cancelTodo">Cancel</button>
-                    <button class="add-btn">Add</button>
-                </div>
+              <input
+                class="add-input"
+                type="text"
+                placeholder="give it a name"
+              />
+              <div class="dialog-btns">
+                <button class="cancelTodo">Cancel</button>
+                <button class="add-btn">Add</button>
+              </div>
             </div>
           </dialog>
         </div>
-        <div class="project-list">
-        </div>
+        <div class="project-list"></div>
       </div>
       <div class="notes">
         <div class="add">
@@ -240,6 +243,41 @@
         </div>
       </div>
     </div>
-    <div class="to-do-lists">there is nono to here</div>
+    <div class="to-do-lists">
+      <div class="to-do-workspace">
+        <div class="todo-title">
+          <p>Home</p>
+        </div>
+        <div class="task-list">
+          <p>Task List</p>
+          <div class="task-list-book">
+            <div class="task-list-paper">
+              <div class="task">
+                <input type="checkbox" name="state" id="task1" value="title1" />
+                title1
+              </div>
+              <hr />
+              <div class="task">
+                <label for="task2">
+                  <input
+                    type="checkbox"
+                    id="task2"
+                    name="state"
+                    value="title2"
+                  />
+                  title22
+                </label>
+              </div>
+            </div>
+            <button class="add-task">Add Task</button>
+          </div>
+        </div>
+        <div class="task-details">
+          <p>title</p>
+          <p>discribtion</p>
+          <p>priority</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,12 +1,5 @@
 
-function Todo(title, discribtion, dueDate, priority){
-    return{
-        title,
-        discribtion,
-        dueDate,
-        priority
-    }
-}
+
 
 export const todoFlow = (function (){
     let todos = [];

@@ -14,6 +14,7 @@ export const domBuilder = (function () {
     todoProject.innerHTML = todoFlow.getTodos()[i];
     todoProject.dataset.value = i;
     todoProject.addEventListener("click", (e) => {
+      graphicHandler.contentHandler(e.target.dataset.value);
       console.log("tryin to change the content " + e.target.dataset.value);
     });
     todoProject.classList.add("project");
@@ -40,6 +41,23 @@ export const domBuilder = (function () {
       console.log(e.target.dataset.value);
       graphicHandler.todoProjectsLoader();
     });
+  };
+
+  const taskListCreator = (i) => {
+    const taskListPaper = document.querySelector(".task-list-paper");
+    const task = document.createElement("div");
+    taskListPaper.appendChild(task);
+    task.classList.add("task");
+    const taskTodo = document.createElement("label");
+    taskTodo.setAttribute("for", `${ds}`);
+    const checkbox = document.createElement("input");
+    checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("id", `${sz}`);
+    checkbox.setAttribute("name", "state");
+    checkbox.setAttribute("value", `${sz}`);
+
+    task.appendChild(taskTodo);
+    task.appendChild(checkbox);
   };
 
   return {

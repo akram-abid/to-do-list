@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo-list</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <div class="nav-bar">
+      <div class="account">
+        <img src="91935a7f82ae016b35ba.jpeg" alt="profile_picture" />
+        <div class="profile-name">
+          <p>Akram</p>
+          <p>Free Plan</p>
+        </div>
+      </div>
+      <hr>
+      <div class="time-categs">
+        <div class="categ">
+          <svg
+            fill="#000000"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M416,64H400V48.45c0-8.61-6.62-16-15.23-16.43A16,16,0,0,0,368,48V64H144V48.45c0-8.61-6.62-16-15.23-16.43A16,16,0,0,0,112,48V64H96a64,64,0,0,0-64,64v12a4,4,0,0,0,4,4H476a4,4,0,0,0,4-4V128A64,64,0,0,0,416,64Z"
+              ></path>
+              <path
+                d="M477,176H35a3,3,0,0,0-3,3V416a64,64,0,0,0,64,64H416a64,64,0,0,0,64-64V179A3,3,0,0,0,477,176ZM224,307.43A28.57,28.57,0,0,1,195.43,336H124.57A28.57,28.57,0,0,1,96,307.43V236.57A28.57,28.57,0,0,1,124.57,208h70.86A28.57,28.57,0,0,1,224,236.57Z"
+              ></path>
+            </g>
+          </svg>
+          <p>Today</p>
+        </div>
+        <div class="categ">
+          <svg
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+            class="bi bi-calendar-week-fill"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zM9.5 7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm3 0h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zM2 10.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"
+              ></path>
+            </g>
+          </svg>
+          <p>Next 7 days</p>
+        </div>
+        <div class="categ">
+          <svg
+            fill="#000000"
+            viewBox="0 0 52 52"
+            xmlns="http://www.w3.org/2000/svg"
+            enable-background="new 0 0 52 52"
+            xml:space="preserve"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M31.6,21.6c-1.2,0-2.2-1-2.2-2.2V5.5c0-1.2,1-2.2,2.2-2.2h14.2c1.2,0,2.2,1,2.2,2.2v13.9 c0,1.2-1,2.2-2.2,2.2H31.6z"
+              ></path>
+              <path
+                d="M37.7,29.8l-8.2,8.9c-0.5,0.5-0.5,1.3,0,1.9l8.2,8.9c0.5,0.6,1.5,0.6,2,0l8.2-8.9c0.5-0.5,0.5-1.3,0-1.9 l-8.2-8.9C39.2,29.2,38.3,29.2,37.7,29.8z"
+              ></path>
+              <circle cx="13" cy="39.4" r="9.3"></circle>
+              <path
+                d="M4.8,6.5l7.2-4.1c0.7-0.4,1.5-0.4,2.1,0l7.1,4.1c0.7,0.4,1.1,1.1,1.1,1.9v8.2c0,0.8-0.4,1.5-1.1,1.9 l-7.1,4.1c-0.7,0.4-1.5,0.4-2.1,0l-7.2-4.1c-0.7-0.4-1.1-1.1-1.1-1.9V8.4C3.7,7.6,4.1,6.9,4.8,6.5z"
+              ></path>
+            </g>
+          </svg>
+          <p>All Tasks</p>
+        </div>
+        <div class="categ">
+          <svg
+            viewBox="0 0 24.00 24.00"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#fffff"
+            stroke-width="0.384"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M19.9006 7L11.7097 15.191L8.47355 11.9626L7.38194 13.0542L11.7097 17.3819L21 8.09161L19.9006 7ZM16.6181 8.09161L15.5264 7L10.6181 11.9084L11.7097 13L16.6181 8.09161ZM7.32774 17.3819L3 13.0542L4.09935 11.9626L8.41935 16.2903L7.32774 17.3819Z"
+                fill="#ffffff   "
+              ></path>
+            </g>
+          </svg>
+          <p>Completed</p>
+        </div>
+      </div>
+      <hr>
+      <div class="projects">
+        <div class="add">
+          <div class="project-text">
+            <svg
+              fill="#000000"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 52 52"
+              enable-background="new 0 0 52 52"
+              xml:space="preserve"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <path
+                      d="M24,7l-1.7-1.7c-0.5-0.5-1.2-0.5-1.7,0L10,15.8l-4.3-4.2c-0.5-0.5-1.2-0.5-1.7,0l-1.7,1.7 c-0.5,0.5-0.5,1.2,0,1.7l5.9,5.9c0.5,0.5,1.1,0.7,1.7,0.7c0.6,0,1.2-0.2,1.7-0.7L24,8.7C24.4,8.3,24.4,7.5,24,7z"
+                    ></path>
+                  </g>
+                </g>
+                <g>
+                  <path
+                    d="M48.4,18.4H27.5c-0.9,0-1.6-0.7-1.6-1.6v-3.2c0-0.9,0.7-1.6,1.6-1.6h20.9c0.9,0,1.6,0.7,1.6,1.6v3.2 C50,17.7,49.3,18.4,48.4,18.4z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    d="M48.4,32.7H22.7c-0.9,0-1.6-0.7-1.6-1.6v-3.2c0-0.9,0.7-1.6,1.6-1.6h25.7c0.9,0,1.6,0.7,1.6,1.6v3.2 C50,32,49.3,32.7,48.4,32.7z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    d="M13,32.7H9.8c-0.9,0-1.6-0.7-1.6-1.6v-3.2c0-0.9,0.7-1.6,1.6-1.6H13c0.9,0,1.6,0.7,1.6,1.6v3.2 C14.7,32,13.9,32.7,13,32.7z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    d="M13,47H9.8c-0.9,0-1.6-0.7-1.6-1.6v-3.2c0-0.9,0.7-1.6,1.6-1.6H13c0.9,0,1.6,0.7,1.6,1.6v3.2 C14.7,46.3,13.9,47,13,47z"
+                  ></path>
+                </g>
+                <g>
+                  <path
+                    d="M48.4,47H22.7c-0.9,0-1.6-0.7-1.6-1.6v-3.2c0-0.9,0.7-1.6,1.6-1.6h25.7c0.9,0,1.6,0.7,1.6,1.6v3.2 C50,46.3,49.3,47,48.4,47z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <p>Projects</p>
+          </div>
+          <button class="add-project">+</button>
+        </div>
+        <div class="project-list">
+          <button class="project">
+            <p>Home</p>
+          </button>
+          <button class="project">
+            <p>Work</p>
+          </button>
+          <button class="project">
+            <p>Study</p>
+          </button>
+
+        </div>
+      </div>
+
+      <div class="notes">
+        <div class="add">
+          <div class="note-text">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M21.6601 10.44L20.6801 14.62C19.8401 18.23 18.1801 19.69 15.0601 19.39C14.5601 19.35 14.0201 19.26 13.4401 19.12L11.7601 18.72C7.59006 17.73 6.30006 15.67 7.28006 11.49L8.26006 7.30001C8.46006 6.45001 8.70006 5.71001 9.00006 5.10001C10.1701 2.68001 12.1601 2.03001 15.5001 2.82001L17.1701 3.21001C21.3601 4.19001 22.6401 6.26001 21.6601 10.44Z"
+                  stroke="#ffffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M15.06 19.39C14.44 19.81 13.66 20.16 12.71 20.47L11.13 20.99C7.15998 22.27 5.06997 21.2 3.77997 17.23L2.49997 13.28C1.21997 9.30998 2.27997 7.20998 6.24997 5.92998L7.82997 5.40998C8.23997 5.27998 8.62997 5.16998 8.99997 5.09998C8.69997 5.70998 8.45997 6.44998 8.25997 7.29998L7.27997 11.49C6.29997 15.67 7.58998 17.73 11.76 18.72L13.44 19.12C14.02 19.26 14.56 19.35 15.06 19.39Z"
+                  stroke="#ffffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M12.64 8.53003L17.49 9.76003"
+                  stroke="#ffffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+                <path
+                  d="M11.66 12.4L14.56 13.14"
+                  stroke="#ffffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </g>
+            </svg>
+            <p>Notes</p>
+          </div>
+          <button class="add-project">+</button>
+        </div>
+        <div class="note-list">
+          <button class="project">Home</button>
+          <button class="project">Bussines</button>
+          <button class="project">School</button>
+          <button class="project">Life</button>
+        </div>
+      </div>
+    </div>
+    <div class="to-do-lists">there is no to here</div>
+  </body>
+</html>

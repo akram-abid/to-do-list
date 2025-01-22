@@ -1,0 +1,274 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  padding: 16px 8px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "nav lists lists lists lists"
+    "nav lists lists lists lists"
+    "nav lists lists lists lists"
+    "nav lists lists lists lists";
+  background-image: url("./images/842e74a71b8a29c3615490090a269a63.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.nav-bar {
+  grid-area: nav;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0.2) 1.3px;
+  padding: 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: white;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  max-height: 100%;
+}
+.scrollable:hover::-webkit-scrollbar,
+.scrollable.scrolling::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #88888859;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f5f5f559;
+}
+
+hr {
+  height: 1.2px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.445);
+}
+.account {
+  margin-left: 8px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-name p:first-of-type {
+  font-size: 18px;
+  font-weight: 600;
+}
+.profile-name p:last-of-type {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+}
+
+.nav-bar img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.time-categs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.categ {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: 530;
+}
+.categ svg {
+  fill: white;
+  width: 25px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.project-text svg {
+  fill: white;
+  width: 20px;
+}
+
+.add-project {
+  background-color: rgba(0, 255, 255, 0);
+  border: none;
+  padding: 4px;
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+}
+
+.project-text > p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 12px;
+}
+
+.project-list > p {
+  font-size: 14px;
+}
+
+.project-container {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.project {
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  border: none;
+  text-align: start;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 6px 12px;
+  flex: 1;
+}
+
+.delet-project {
+  color: rgba(255, 0, 55, 0.719);
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  display: none;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 12px;
+}
+
+.note-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.note-text > svg {
+  width: 28px;
+}
+
+.note-text > p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+dialog {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(60px);
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0.2) 1.3px;
+  padding: 16px 16px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  font-size: 18px;
+  font-weight: 500;
+  gap: 12px;
+}
+
+.dialog-conetnt div {
+  display: flex;
+  gap: 8px;
+  justify-content: end;
+}
+
+dialog div > input {
+  height: 45px;
+  border-radius: 10px;
+  border: solid white 1px;
+  padding: 2px 8px;
+  background: transparent;
+  font-size: 25px;
+  border: none;
+}
+dialog div > input:focus {
+  outline: none;
+  color: white;
+  height: 45px;
+  font-size: 25px;
+}
+
+.dialog-btns {
+  display: flex;
+  justify-content: end;
+  gap: 6px;
+}
+
+dialog div > button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 4px 8px;
+}
+
+dialog div > button:last-child {
+  color: white;
+  font-weight: 500;
+  background-color: rgb(42, 42, 221);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.to-do-lists {
+  grid-area: lists;
+  font-weight: 500;
+}

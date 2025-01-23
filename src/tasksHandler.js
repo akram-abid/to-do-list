@@ -1,26 +1,26 @@
 import { domBuilder } from "./domBuilder";
 
-function Task(title, discribtion, dueDate, priority,list, state){
-    return{
+function Task(title, discribtion, dueDate, priority, list, state) {
+    return {
         title,
         discribtion,
         dueDate,
         priority,
         list,
-        state
-    }
+        state,
+    };
 }
 const task1 = Task("just do it", "nike", "today", "high", "Home");
-const task2 = Task("just don't it", "adidas", "today", "high", "work");
+const task2 = Task("just don't it", "adidas", "tomorow", "high", "work");
 
-export const tasksHandler = (function(){
+export const tasksHandler = (function () {
     const tasks = [task1, task2];
     const addTask = (title, discribtion, dueDate, priority, list, state) => {
         tasks.push(Task(title, discribtion, dueDate, priority, list, state));
     };
 
     const getTasks = () => {
-        return tasks
+        return tasks;
     };
 
     const deleteTask = (index) => {
@@ -36,5 +36,5 @@ export const tasksHandler = (function(){
         getTasks,
         deleteTask,
         changeTaskState,
-    }
+    };
 })();

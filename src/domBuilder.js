@@ -62,6 +62,7 @@ export const domBuilder = (function () {
 
     const inputHolder = document.createElement("div");
     inputHolder.classList.add("input-holder");
+    inputHolder.dataset.value = i;
 
     const taskTodo = document.createElement("label");
     taskTodo.setAttribute("for", `${tasksHandler.getTasks()[i].title}`);
@@ -100,8 +101,8 @@ export const domBuilder = (function () {
     taskListPaper.appendChild(seperator);
 
     taskTodo.addEventListener("click", () => {
-      console.log("haya dertha");
-      p.style.textDecoration = "line-through";
+      //console.log("haya dertha");
+      //p.style.textDecoration = "line-through";
     });
     checkbox.addEventListener("click", () => {
       if (checkbox.checked) {
@@ -122,6 +123,10 @@ export const domBuilder = (function () {
     });
     inputHolder.addEventListener("mouseleave", () => {
       removeTask.style.display = "none";
+    });
+
+    inputHolder.addEventListener("click", (e) => {
+      graphicHandler.reloadTaskDeatails(e.target.dataset.value);
     });
 
     removeTask.addEventListener("mouseenter", () => {

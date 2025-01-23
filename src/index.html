@@ -256,26 +256,38 @@
                 <input type="checkbox" name="state" id="task1" value="title1" />
                 title1
               </div>
-              <hr>
+              <hr />
               <div class="task">
-                  <input
-                  type="checkbox"
-                  id="task2"
-                  name="state"
-                  value="title2"
-                  />
-                  <label for="task2">
-                    title22
-                </label>
+                <input type="checkbox" id="task2" name="state" value="title2" />
+                <label for="task2"> title22 </label>
               </div>
             </div>
             <button class="add-task">Add Task</button>
           </div>
         </div>
         <div class="task-details">
-          <p>title</p>
-          <p>discribtion</p>
-          <p>priority</p>
+            <div class="task-title-text">
+                <p class="ttl">title</p>
+                <p class="task-title">that is the title</p>
+            </div>
+            <hr />
+            <div class="discribtion-text">
+              <p class="ttl">discribtion</p>
+                <p class="discribtion">that is all the discribtion that we can give you</p>
+            </div>
+          <div class="proirity">
+            <label for="task-prority" class="task-prority ttl">task priority:</label>
+            <input list="prios" name="prio" />
+            <datalist id="prios">
+              <option value="priority 1">priority 1</option>
+              <option value="priority 1">priority 1</option>
+              <option value="priority 1">priority 1</option>
+            </datalist>
+          </div>
+          <div class="due-date-text">
+            <p class="ttl">Deadline:</p>
+            <p class="due-date">today</p>
+          </div>
         </div>
       </div>
     </div>

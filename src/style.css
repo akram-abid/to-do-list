@@ -200,7 +200,7 @@ hr {
   font-weight: 600;
 }
 
-dialog {
+.dialog-todo-handel {
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(60px);
   border-radius: 20px;
@@ -230,7 +230,7 @@ dialog {
   justify-content: end;
 }
 
-dialog div > input {
+.dialog-todo-handel div > input {
   height: 45px;
   border-radius: 10px;
   border: solid white 1px;
@@ -239,7 +239,7 @@ dialog div > input {
   font-size: 25px;
   border: none;
 }
-dialog div > input:focus {
+.dialog-todo-handel div > input:focus {
   outline: none;
   color: white;
   height: 45px;
@@ -349,10 +349,27 @@ dialog div > button:last-child {
   margin-bottom: 12px;
 }
 
+.input-holder {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+
+.remove-task {
+  color: rgba(255, 0, 34, 0.562);
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  display: none;
+}
+
 .task {
   color: rgba(255, 255, 255, 0.842);
   display: flex;
   gap: 12px;
+  display: flex;
+  align-items: center;
 }
 
 .task-details {
@@ -371,32 +388,134 @@ dialog div > button:last-child {
 }
 
 .task-title-text {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .ttl {
-    font-size: 17px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.849);
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.849);
 }
 
 .task-title-text {
   display: flex;
   flex-direction: column;
-  margin-left: 8px ;
+  margin-left: 8px;
   gap: 2px;
 }
 
-.task-title-text p:last-child  {
-    font-weight: 600;
-    font-size: 24px;
+.task-title-text p:last-child {
+  font-weight: 600;
+  font-size: 24px;
 }
 
 .task-details hr {
-    width: 75%;
-    margin: 0px;
+  width: 75%;
+  margin: 0px;
+}
+
+.due-date-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .due-date-text p:last-child {
   font-size: 18px;
   font-weight: 600;
+}
+
+input[list="prios"] {
+  background-color: rgba(0, 68, 255, 0.966);
+  border: solid 0.6px rgba(230, 230, 230, 0.699);
+  padding: 4px 4px;
+  padding-left: 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+input[list="prios"]:hover {
+  background-color: rgba(0, 162, 255, 0.897);
+  color: white;
+}
+
+input[list="prios"]:focus {
+  outline: solid 1.3px rgba(0, 162, 255, 0.993);
+  border: none;
+  color: white;
+}
+
+#task-dsc {
+  resize: none;
+}
+
+
+.add-task-dialog-con {
+  padding: 20px 16px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(60px);
+  border-radius: 20px;
+  border: solid rgba(255, 255, 255, 0.2) 1.3px;
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  gap: 16px;
+  box-shadow: 0 -3em 3em rgba(0, 0, 0, 0.3);
+}
+
+.dialog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.add-task-dialog-con > p {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+}
+
+.task-ttl-cont input, textarea {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.233);
+  padding: 4px 8px;
+  font-size: 18px;
+  backdrop-filter: blur(60px);
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  border: solid rgb(255, 255, 255) 1.3px;
+}
+
+.task-dialog-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: end;
+}
+
+input[list="prioss"] {
+  background-color: rgba(0, 68, 255, 0.966);
+  border: solid 0.6px rgba(230, 230, 230, 0.699);
+  padding: 4px 4px;
+  padding-left: 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+input[list="prioss"]:hover {
+  background-color: rgba(0, 162, 255, 0.897);
+  color: white;
+}
+
+input[list="prioss"]:focus {
+  outline: solid 1.3px rgba(0, 162, 255, 0.993);
+  border: none;
+  color: white;
 }

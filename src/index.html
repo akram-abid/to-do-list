@@ -170,7 +170,7 @@
             <p>Projects</p>
           </div>
           <button class="add-project">+</button>
-          <dialog>
+          <dialog class="st-dialog">
             <div class="dialog-content">
               <input
                 class="add-input"
@@ -279,9 +279,9 @@
             <label for="task-prority" class="task-prority ttl">task priority:</label>
             <input list="prios" name="prio" />
             <datalist id="prios">
-              <option value="priority 1">priority 1</option>
-              <option value="priority 1">priority 1</option>
-              <option value="priority 1">priority 1</option>
+              <option value="high"></option>
+              <option value="medium"></option>
+              <option value="low"></option>
             </datalist>
           </div>
           <div class="due-date-text">
@@ -290,6 +290,38 @@
           </div>
         </div>
       </div>
+      <dialog class="add-task-dialog">
+        <div class="add-task-dialog-con">
+          <p>Describe the task you want to add</address></p>
+          <form action="#" class="dialog-form">
+            <div class="task-ttl-cont">
+              <label for="task-ttl" class="ttl">title</label>
+              <input type="text" id="task-ttl">
+            </div>
+            <div class="task-dsc-cont">
+              <label for="task-dsc" class="ttl">discribtion</label>
+              <textarea name="task-dsc" id="task-dsc" rows="5" cols="30"></textarea>
+            </div>
+            <div class="task-d-date-cont">
+              <label for="task-d-date" class="ttl">due-date</label>
+              <input type="date" name="due-date" id="task-s-date">
+            </div>
+            <div class="task-prio-cont">
+              <label for="task-proritys" class="task-proritys ttl">task priority:</label>
+              <input list="prioss" name="prios" class="prios" placeholder="how much this is important"/>
+              <datalist id="prioss">
+                <option value="high"></option>
+                <option value="medium"></option>
+                <option value="low"></option>
+              </datalist>
+            </div>
+          </form>
+          <div class="task-dialog-buttons">
+            <button class="dialog-close-task">Cancel</button>
+            <button class="dialog-add-task-button">Add Task</button>
+          </div>
+        </div>
+      </dialog>
     </div>
   </body>
 </html>

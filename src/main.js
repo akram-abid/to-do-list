@@ -6,11 +6,21 @@ import { tasksHandler } from "./tasksHandler";
 const projectList = document.querySelector(".project-list");
 
 export const graphicHandler = (function () {
+  let currentTodoProject = todoFlow.getTodos()[0];
+
+  const changeCurrentProject = (project) => {
+      currentTodoProject = project;
+  };
+
   const todoProjectsLoader = () => {
     projectList.innerHTML = "";
     for (let i = 0; i < todoFlow.getTodos().length; i++) {
       domBuilder.navBarElementCreator(i);
     }
+  };
+
+  const getCurrentProject = () => {
+    return currentTodoProject;
   };
 
   const contentHandler = (i) => {
@@ -22,16 +32,17 @@ export const graphicHandler = (function () {
     const taskListPaper = document.querySelector(".task-list-paper");
     taskListPaper.innerHTML = "";
     for (let i = 0; i < tasksHandler.getTasks().length; i++){
+      if(tasksHandler.getTasks()[i].list.toUpperCase() == graphicHandler.getCurrentProject().toUpperCase()){
         domBuilder.taskListCreator(i);
-//        console.log(tasksHandler.getTasks()[i]);
-        console.log("hak hak hak"+tasksHandler.getTasks()[i].title);
-
+      }
     }
 };
   return {
     todoProjectsLoader,
     contentHandler,
-    reloadTasks
+    reloadTasks,
+    changeCurrentProject,
+    getCurrentProject
   };
 })();
 
@@ -47,4 +58,6 @@ addTodoProjectButton.addEventListener("click", () => {
 const addTaskButton = document.querySelector(".add-task");
 addTaskButton.addEventListener("click", () => {
     graphicHandler.reloadTasks();
+    dialogHandler.showTaskDialog();
 });
+

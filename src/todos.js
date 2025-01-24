@@ -4,11 +4,12 @@ export const todoFlow = (function () {
     let todos = [];
 
     const addTodo = (title) => {
-        //todos.push(title);
         const todoFromStore = JSON.parse(localStorage.getItem("todo"));
-        //todoFromStore.push(title);
-        console.log("termti"+todoFromStore.valueOf().values());
+        todoFromStore.push(title);
+        console.log("termti" + todoFromStore[2]);
         localStorage.setItem("todo", JSON.stringify(todoFromStore));
+        refresh()
+
     };
 
     const refresh = () => {
@@ -16,7 +17,7 @@ export const todoFlow = (function () {
     };
 
     const getTodos = () => {
-        return localStorage.getItem("todoStore");
+        return todos;
     };
 
     const deleteTodo = (index) => {

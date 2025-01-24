@@ -34,8 +34,8 @@ export const graphicHandler = (function () {
         taskListPaper.innerHTML = "";
         for (let i = 0; i < tasksHandler.getTasks().length; i++) {
             if (
-                tasksHandler.getTasks()[i].list.toUpperCase() ==
-                graphicHandler.getCurrentProject().toUpperCase()
+                tasksHandler.getTasks()[i].list ==
+                graphicHandler.getCurrentProject()
             ) {
                 domBuilder.taskListCreator(i);
             }
@@ -43,18 +43,18 @@ export const graphicHandler = (function () {
     };
 
     const reloadTaskDeatails = (index) => {
-      const taskTitle = document.querySelector(".task-title");
-      taskTitle.innerHTML = tasksHandler.getTasks()[index].title;
+        const taskTitle = document.querySelector(".task-title");
+        taskTitle.innerHTML = tasksHandler.getTasks()[index].title;
 
-      const discribtion= document.querySelector(".discribtion");
-      discribtion.innerHTML = tasksHandler.getTasks()[index].discribtion;
-      
-      const prios= document.querySelector("#prios");
-      prios.value = tasksHandler.getTasks()[index].priority;
-      
-      const dueDate= document.querySelector(".due-date");
-      dueDate.innerHTML = tasksHandler.getTasks()[index].dueDate;
-      console.log("look its fucking working");
+        const discribtion = document.querySelector(".discribtion");
+        discribtion.innerHTML = tasksHandler.getTasks()[index].discribtion;
+
+        const prios = document.querySelector("#prios");
+        prios.value = tasksHandler.getTasks()[index].priority;
+
+        const dueDate = document.querySelector(".due-date");
+        dueDate.innerHTML = tasksHandler.getTasks()[index].dueDate;
+        console.log("look its fucking working");
     };
 
     return {
@@ -63,26 +63,12 @@ export const graphicHandler = (function () {
         reloadTasks,
         changeCurrentProject,
         getCurrentProject,
-        reloadTaskDeatails
+        reloadTaskDeatails,
     };
 })();
 
-const tab = ["ak", "ra", "m"];
-localStorage.setItem("awedi", JSON.stringify(tab));
-console.log("try " + typeof(Object.values(JSON.parse(localStorage.getItem("awedi")))));
-
-const obj = JSON.parse(localStorage.getItem("todo"));
-console.log("hak tab   "+typeof(Object.values(obj)));
-
-
-storage.intializeStorage();
-
-todoFlow.addTodo("akram");
-
-if(storage.verifyItemExist("todos")){
-  console.log("firast"+ typeof(localStorage.getItem("todoStore")));
-}else{
-  console.log("oacih"+JSON.parse(localStorage.getItem("todoStore")));
+if (storage.verifyItemExist("todos")) {
+    storage.intializeStorage();
 }
 graphicHandler.todoProjectsLoader();
 graphicHandler.reloadTasks();

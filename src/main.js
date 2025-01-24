@@ -67,11 +67,20 @@ export const graphicHandler = (function () {
     };
 })();
 
-if (storage.verifyItemExist("todos")) {
+console.log("mn lwel "+ todoFlow.getTodos());
+
+if (JSON.parse(localStorage.getItem("todo")) == [] ) {
     storage.intializeStorage();
+    console.log("hayhay");
+    graphicHandler.todoProjectsLoader();
+    console.log(JSON.parse(localStorage.getItem("todo")));
+    todoFlow.refresh();
 }
+console.log("aewedi hak " +localStorage.getItem("todo"));
+
+graphicHandler.reloadTasks(); 
 graphicHandler.todoProjectsLoader();
-graphicHandler.reloadTasks();
+
 console.log(tasksHandler.getTasks());
 
 const addTodoProjectButton = document.querySelector(".add-project");

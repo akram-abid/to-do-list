@@ -13,20 +13,23 @@ export const todoFlow = (function () {
     };
 
     const refresh = () => {
-        todos = localStorage.getItem("todoStore");
+        todos = JSON.parse(localStorage.getItem("todo"));
     };
 
     const getTodos = () => {
-        return todos;
+        return JSON.parse(localStorage.getItem("todo"));
     };
 
     const deleteTodo = (index) => {
+        refresh();
         todos.splice(index, 1);
+        localStorage.setItem("todo", JSON.stringify(todos));
     };
 
     return {
         addTodo,
         getTodos,
         deleteTodo,
+        refresh
     };
 })();

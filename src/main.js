@@ -3,6 +3,7 @@ import { todoFlow } from "./todos";
 import { domBuilder } from "./domBuilder";
 import { dialogHandler } from "./dialogHandler";
 import { tasksHandler } from "./tasksHandler";
+import { storage } from "./storage";
 const projectList = document.querySelector(".project-list");
 
 export const graphicHandler = (function () {
@@ -49,10 +50,11 @@ export const graphicHandler = (function () {
       discribtion.innerHTML = tasksHandler.getTasks()[index].discribtion;
       
       const prios= document.querySelector("#prios");
-      prios.innerHTML = tasksHandler.getTasks()[index].priority;
+      prios.value = tasksHandler.getTasks()[index].priority;
       
       const dueDate= document.querySelector(".due-date");
       dueDate.innerHTML = tasksHandler.getTasks()[index].dueDate;
+      console.log("look its fucking working");
     };
 
     return {
@@ -65,6 +67,23 @@ export const graphicHandler = (function () {
     };
 })();
 
+const tab = ["ak", "ra", "m"];
+localStorage.setItem("awedi", JSON.stringify(tab));
+console.log("try " + typeof(Object.values(JSON.parse(localStorage.getItem("awedi")))));
+
+const obj = JSON.parse(localStorage.getItem("todo"));
+console.log("hak tab   "+typeof(Object.values(obj)));
+
+
+storage.intializeStorage();
+
+todoFlow.addTodo("akram");
+
+if(storage.verifyItemExist("todos")){
+  console.log("firast"+ typeof(localStorage.getItem("todoStore")));
+}else{
+  console.log("oacih"+JSON.parse(localStorage.getItem("todoStore")));
+}
 graphicHandler.todoProjectsLoader();
 graphicHandler.reloadTasks();
 console.log(tasksHandler.getTasks());

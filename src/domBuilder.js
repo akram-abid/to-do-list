@@ -1,4 +1,5 @@
 import { graphicHandler } from "./main";
+import { storage } from "./storage";
 import { tasksHandler } from "./tasksHandler";
 import { todoFlow } from "./todos";
 
@@ -126,7 +127,8 @@ export const domBuilder = (function () {
     });
 
     inputHolder.addEventListener("click", (e) => {
-      graphicHandler.reloadTaskDeatails(e.target.dataset.value);
+      graphicHandler.reloadTaskDeatails(e.currentTarget.dataset.value);
+      storage.verifyStorageExist();
     });
 
     removeTask.addEventListener("mouseenter", () => {

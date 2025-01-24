@@ -1,29 +1,31 @@
+import { storage } from "./storage";
 
-
-
-export const todoFlow = (function (){
+export const todoFlow = (function () {
     let todos = [];
-    todos.push("Home");
-    todos.push("Work");
-    todos.push("Study");
 
     const addTodo = (title) => {
-        todos.push(title)
+        //todos.push(title);
+        const todoFromStore = JSON.parse(localStorage.getItem("todo"));
+        //todoFromStore.push(title);
+        console.log("termti"+todoFromStore.valueOf().values());
+        localStorage.setItem("todo", JSON.stringify(todoFromStore));
     };
 
-    const getTodos = ()=> {
-        return todos;
+    const refresh = () => {
+        todos = localStorage.getItem("todoStore");
+    };
+
+    const getTodos = () => {
+        return localStorage.getItem("todoStore");
     };
 
     const deleteTodo = (index) => {
-        todos.splice(index , 1);
+        todos.splice(index, 1);
     };
 
     return {
         addTodo,
         getTodos,
-        deleteTodo
+        deleteTodo,
     };
-
 })();
-

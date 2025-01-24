@@ -67,18 +67,46 @@ export const graphicHandler = (function () {
     };
 })();
 
-console.log("mn lwel "+ todoFlow.getTodos());
+console.log("mn lwel " + todoFlow.getTodos());
 
-if (JSON.parse(localStorage.getItem("todo")) == [] ) {
+if (JSON.parse(localStorage.getItem("todo")) == []) {
     storage.intializeStorage();
     console.log("hayhay");
     graphicHandler.todoProjectsLoader();
     console.log(JSON.parse(localStorage.getItem("todo")));
     todoFlow.refresh();
 }
-console.log("aewedi hak " +localStorage.getItem("todo"));
 
-graphicHandler.reloadTasks(); 
+
+
+function Task(title, discribtion, dueDate, priority, list, state) {
+  return {
+      title,
+      discribtion,
+      dueDate,
+      priority,
+      list,
+      state,
+  };
+}
+
+const t1 = Task("dir jedha", "nike", "today", "high", "Work", true);
+const fuck = [t1];
+
+localStorage.setItem("tasko", JSON.stringify(fuck));
+
+const data =  JSON.parse(localStorage.getItem("tasko"));
+const retrivedData = data.map(obj => {
+  return Object.assign({title: "", discribtion: "", dueDate: "", priority: "", list: "", state: false}, obj);
+});
+console.log("hamlik tasks " + retrivedData[0]);
+console.log("aewedi hak " + Array.isArray(retrivedData));
+console.log(tasksHandler.getTasks());
+
+const tmpTasks = Object.values(localStorage.getItem("task"));
+console.log("chouf hna " + Array.isArray(tmpTasks));
+
+graphicHandler.reloadTasks();
 graphicHandler.todoProjectsLoader();
 
 console.log(tasksHandler.getTasks());

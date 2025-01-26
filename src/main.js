@@ -4,6 +4,8 @@ import { domBuilder } from "./domBuilder";
 import { dialogHandler } from "./dialogHandler";
 import { tasksHandler } from "./tasksHandler";
 import { storage } from "./storage";
+import { format, formatDistance, differenceInDays } from "date-fns";
+import { tr } from "date-fns/locale";
 const projectList = document.querySelector(".project-list");
 
 export const graphicHandler = (function () {
@@ -34,15 +36,15 @@ export const graphicHandler = (function () {
         taskListPaper.innerHTML = "";
         let first = 0;
         const size = tasksHandler.getTasks().length;
-        for (let i = 0; i < size ; i++) {
+        for (let i = 0; i < size; i++) {
             if (
                 tasksHandler.getTasks()[i].list ==
                 graphicHandler.getCurrentProject()
             ) {
                 domBuilder.taskListCreator(i);
-                if(first == 0){
-                reloadTaskDeatails(i);
-                first ++;
+                if (first == 0) {
+                    reloadTaskDeatails(i);
+                    first++;
                 }
             }
         }
@@ -109,4 +111,83 @@ const addTaskButton = document.querySelector(".add-task");
 addTaskButton.addEventListener("click", () => {
     graphicHandler.reloadTasks();
     dialogHandler.showTaskDialog();
+});
+
+const today = document.querySelector(".today");
+console.log(today);
+today.addEventListener("click", () => {
+    const taskListPaper = document.querySelector(".task-list-paper");
+    taskListPaper.innerHTML = "";
+    let first = 0;
+    const size = tasksHandler.getTasks().length;
+    for (let i = 0; i < size; i++) {
+        if (
+            tasksHandler.getTasks()[i].dueDate ===
+            format(new Date(), "yyyy-MM-dd")
+        ) {
+            domBuilder.taskListCreator(i);
+            if (first == 0) {
+                graphicHandler.reloadTaskDeatails(i);
+                first++;
+            }
+        }
+    }
+});
+
+const week = document.querySelector(".week");
+week.addEventListener("click", () => {
+    const taskListPaper = document.querySelector(".task-list-paper");
+    taskListPaper.innerHTML = "";
+    let first = 0;
+    const size = tasksHandler.getTasks().length;
+    for (let i = 0; i < size; i++) {
+        if (
+            differenceInDays(
+                format(new Date(), "yyyy-MM-dd"),
+                tasksHandler.getTasks()[i].dueDate
+            ) < 7 &&
+            differenceInDays(
+                format(new Date(), "yyyy-MM-dd"),
+                tasksHandler.getTasks()[i].dueDate
+            ) >= 0
+        ) {
+            domBuilder.taskListCreator(i);
+            if (first == 0) {
+                graphicHandler.reloadTaskDeatails(i);
+                first++;
+            }
+        }
+    }
+});
+
+console.log(typeof(differenceInDays(
+  format(new Date(), "yyyy-MM-dd"),
+  tasksHandler.getTasks()[2].dueDate
+)));
+
+const all = document.querySelector(".all");
+all.addEventListener("click", () => {
+    const taskListPaper = document.querySelector(".task-list-paper");
+    taskListPaper.innerHTML = "";
+    const size = tasksHandler.getTasks().length;
+    for (let i = 0; i < size; i++) {
+        domBuilder.taskListCreator(i);
+    }
+});
+
+const complted = document.querySelector(".completed");
+complted.addEventListener("click", () => {
+    const taskListPaper = document.querySelector(".task-list-paper");
+    taskListPaper.innerHTML = "";
+    let first = 0;
+    const size = tasksHandler.getTasks().length;
+    for (let i = 0; i < size; i++) {
+        if (tasksHandler.getTasks()[i].state == true) {
+            domBuilder.taskListCreator(i);
+            if (first == 0) {
+                graphicHandler.reloadTaskDeatails(i);
+                first++;
+            }
+        }
+    }
 });

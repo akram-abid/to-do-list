@@ -30,7 +30,6 @@ export const tasksHandler = (function () {
     };
 
     const getTasks = () => {
-        console.log("i am getting the data ", JSON.parse(localStorage.getItem("task")));
         refresh();
         return tasks;
     };
